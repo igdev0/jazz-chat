@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
+import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
+import {Jazz} from '@/app/jazz';
+import {ReactNode} from 'react';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,16 +20,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                     children,
+                                   }: Readonly<{
+  children: ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
+      <html
+          lang="en"
+          className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      >
+      <body className="min-h-full flex flex-col">
+      <Jazz>{children}</Jazz>
+      </body>
+      </html>
   );
 }
