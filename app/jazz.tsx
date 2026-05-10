@@ -9,13 +9,12 @@ export function Jazz({children}: { children: ReactNode }) {
   return (
       <JazzReactProvider
           AccountSchema={JazzAccount}
-          enableSSR
           sync={{
             peer: `wss://cloud.jazz.tools/?key=${process.env.NEXT_PUBLIC_APP_JAZZ_API_KEY}`,
           }}
       >
-        {children}
         <JazzInspector/>
+        {children}
       </JazzReactProvider>
   );
 }

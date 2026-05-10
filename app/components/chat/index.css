@@ -1,0 +1,37 @@
+@import "../../globals.css";
+
+@layer components {
+    .chat {
+        @apply max-w-100 mx-auto mt-50 w-full h-full p-4 border border-gray-200 rounded-md;
+
+        .chat-box {
+            @apply w-full h-full;
+            @apply p-2;
+            @apply flex flex-col gap-4;
+
+            .chat-message {
+                @apply p-2 bg-gray-200 rounded-4xl;
+                @apply w-fit;
+                &:nth-child(odd) {
+                    @apply ml-auto;
+                }
+
+                &:nth-child(even) {
+                    @apply mr-auto;
+                }
+            }
+        }
+
+        form {
+            @apply ml-auto w-full flex;
+        }
+        input {
+            @apply py-2 px-4 rounded-l-md flex-1;
+            @apply border border-gray-200;
+        }
+
+        button {
+            @apply border border-indigo-500;
+        }
+    }
+}
